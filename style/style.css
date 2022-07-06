@@ -104,7 +104,7 @@ body span {
 body .playerinfo {
   position: absolute;
   width: 175px;
-  height: 120px;
+  height: 140px;
   padding: 10px;
   top: calc(10% - 50px);
   left: calc(10% - 50px);

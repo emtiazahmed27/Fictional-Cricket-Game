@@ -33,12 +33,6 @@ btn.addEventListener("click",()=>{
     ball.innerText=`Balls: ${click}`;
     // console.log(numb);
     }
-    else if(wicket==0){
-        wckt.innerText="All Wickets Gone";
-        //resetting game if All wickets are lost
-        setTimeout(()=>{
-            location.reload()},2000)
-    }
     else{
         //if anyone wants to play more then 1 over
         btn.style.pointerEvents="auto";
@@ -62,7 +56,17 @@ container.addEventListener("transitionend",()=>{
     //If wicket falls decrementing wickets
     if (prevRun==totalRun){
         wicket--;
+        wckt.style.color="#4caf50";
         wckt.innerText=`Wickets: ${wicket}`;
+        //if wicket is 0
+        if(wicket <=0){
+        btn.style.pointerEvents="auto";
+        wckt.style.color="red";
+        wckt.innerText=`Wickets: All Gone`;
+        //resetting game if All wickets are lost
+        setTimeout(()=>{
+            location.reload()},2000)
+        }
     }
     // console.log(`actualdegree ${degIn360}`);
     // console.log(`divspin ${divSpin(degIn360)}`);
